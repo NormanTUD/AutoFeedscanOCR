@@ -51,5 +51,12 @@ sleep 20
 	done
 } &
 
+for job in `jobs -p`
+do
+	echo $job
+	wait $job || let "FAIL+=1"
+done
+
+
 rm gesamt.pdf
 pdftk *.pdf cat output gesamt.pdf

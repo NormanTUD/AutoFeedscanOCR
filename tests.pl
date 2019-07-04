@@ -57,7 +57,7 @@ if($argument eq 'every_jpg_has_nonempty_pdf') {
 
 	sub skip_file {
 		my $file = shift;
-		my $command = 'convert '.$file.' -threshold 20% -format %c histogram:info:- | wc -l';
+		my $command = 'convert '.$file.' -threshold 30% -format %c histogram:info:- | wc -l';
 		my $code = qx($command);
 
 		chomp $code;
